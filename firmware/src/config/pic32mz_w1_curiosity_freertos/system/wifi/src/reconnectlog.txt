@@ -1,0 +1,450 @@
+
+
+ STA Configuration :
+
+ channel=0
+
+ autoConnect=1
+
+ ssid=DEMO_AP
+
+ passphase=password
+
+ authentication type=4 (1-Open,2-WEP,3-Mixed mode(WPA/WPA2),4-WPA2,5-Mixed mode(WPA2/WPA3),6-WPA3)
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+IP address obtained = 192.168.81.136
+
+Gateway IP address = 192.168.81.195
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+AP connected
+
+***********************************
+
+WiFi Disconnected by STA from AP
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+ Trying to connect to SSID : DEMO_AP
+
+ STA Connection failed.
+
+
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+***********************************
+
+**********************************
+
