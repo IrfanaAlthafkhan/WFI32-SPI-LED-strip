@@ -1,1 +1,0 @@
-$(MP_EXTRA_AS_PRE)  -c -mprocessor=$(MP_PROCESSOR_OPTION) -DXPRJ_pic32mz_w1_curiosity_driver=$(CND_CONF)    -Wa,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_AS_POST),--gdwarf-2 -mdfp="${DFP_DIR}"C:\Users\I20868\Videos\h3 framework\wireless_apps_pic32mzw1_wfi32e01\apps\wifi_sta\firmware\src\config\pic32mz_w1_curiosity_driver\library\tcpip\src\tcpip_helper_c32.S
