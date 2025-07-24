@@ -31,6 +31,7 @@
 #include "app_control.h"
 #include "wdrv_pic32mzw_client_api.h"
 #include "tcpip/tcpip_manager.h"
+#include "ws2812_spi.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -654,7 +655,7 @@ void APP_DRIVER_Tasks ( void )
         case APP_TCPIP_WAIT_FOR_TCPIP_INIT:
         {
             tcpipStat = TCPIP_STACK_Status(sysObj.tcpip);
-
+ws2812_init();
             if (tcpipStat < 0) 
             {
                 SYS_CONSOLE_MESSAGE( "APP: TCP/IP stack initialization failed!\r\n" );
@@ -716,6 +717,11 @@ void APP_DRIVER_Tasks ( void )
                 
                 if(appData.isConnected == true)
                 {
+                      for (int i = 0; i < WS2812_NUM_LEDS; i++) {
+        ws2812_set_led(i, 255, 0, 0); // All red
+    }
+
+    ws2812_show();
                     status = WDRV_PIC32MZW_BSSDisconnect(appData.wdrvHandle);
                 }
                 

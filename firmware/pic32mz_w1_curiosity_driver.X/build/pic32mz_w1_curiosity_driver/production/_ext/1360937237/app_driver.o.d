@@ -81,7 +81,8 @@ build/pic32mz_w1_curiosity_driver/production/_ext/1360937237/app_driver.o: \
  ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_custie.h \
  ../src/config/pic32mz_w1_curiosity_driver/library/tcpip/src/link_list.h \
  ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_softap.h \
- ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_sta.h
+ ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_sta.h \
+ ../src/ws2812_spi.h
 
 ../src/app_driver.h:
 
@@ -252,3 +253,5 @@ build/pic32mz_w1_curiosity_driver/production/_ext/1360937237/app_driver.o: \
 ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_softap.h:
 
 ../src/config/pic32mz_w1_curiosity_driver/driver/wifi/pic32mzw1/include/wdrv_pic32mzw_sta.h:
+
+../src/ws2812_spi.h:
