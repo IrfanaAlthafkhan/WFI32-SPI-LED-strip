@@ -1,0 +1,121 @@
+diff --git a/sys_wifi.c b/C:/Users/I20868/Videos/rio0/support/sys_wifi.c
+index 0ca427f..df12830 100644
+--- a/sys_wifi.c
++++ b/C:/Users/I20868/Videos/rio0/support/sys_wifi.c
+@@ -98,13 +98,13 @@ static    uint32_t              g_wifiSrvcAutoConnectRetry = 0;
+ 
+ 
+ /* Wi-Fi  Service Configuration Structure */
+-static    SYS_WIFI_CONFIG       g_wifiSrvcConfig;
++SYS_WIFI_CONFIG       g_wifiSrvcConfig;
+ 
+ /* Wi-Fi Service cookie */
+ static    void *                g_wifiSrvcCookie ;
+ 
+ /* Wi-Fi Service init enable wait status */
+-static    bool                  g_wifiSrvcInit = false;
++static    bool                  g_wifiSrvcInit = true;
+ 
+ /* Cookie for Wi-Fi Provision */
+ static    char                  g_wifiSrvcProvCookieVal = 100;
+@@ -572,7 +572,16 @@ static SYS_WIFI_RESULT SYS_WIFI_SetConfig
+         return ret;
+     }
+ }
+-
++uint64_t gNextReconnectTime;
++uint32_t gConnectRequests;
++uint32_t gConnects;
++uint32_t jmallocs;
++uint32_t jfrees;
++bool needConnect = true;
++#define TEST_MALLOC_SIZE (1500u)
++uint8_t *jtmp = NULL;
++size_t jtmpSize = 8;
++void SYS_WIFIPROV_TriggerReconnect(void);
+ static uint32_t SYS_WIFI_ExecuteBlock
+ (
+     SYS_MODULE_OBJ object
+@@ -584,6 +593,32 @@ static uint32_t SYS_WIFI_ExecuteBlock
+     uint8_t                      ret =  SYS_WIFIPROV_OBJ_INVALID;
+ 	static bool provConnStatus = false;
+ 
++#if 1
++    if (jtmp != NULL)
++    {
++        jfrees++;
++        vPortFree(jtmp);
++        jtmp = NULL;
++    }
++    else
++    {
++        jtmp = pvPortMalloc(jtmpSize);
++        if (jtmp != NULL)
++        {
++            jmallocs++;
++            //memset(jtmp, 0x5a, jtmpSize);
++
++            if ((jtmpSize < 8) || (jtmpSize > TEST_MALLOC_SIZE))
++            {
++                jtmpSize = 8;
++            }
++            else
++            {
++                jtmpSize++;
++            }
++        }            
++    }
++#endif
+  
+     if (&g_wifiSrvcObj == (SYS_WIFI_OBJ*) wifiSrvcObj)
+     {    
+@@ -684,6 +719,8 @@ static uint32_t SYS_WIFI_ExecuteBlock
+ 
+             case SYS_WIFI_STATUS_CONNECT_REQ:
+             {
++                gConnectRequests++;
++                needConnect = false;
+                 if (OSAL_RESULT_TRUE == OSAL_SEM_Pend(&g_wifiSrvcSemaphore, OSAL_WAIT_FOREVER)) 
+                 {
+                     if (SYS_WIFI_SUCCESS == SYS_WIFI_SetChannel()) 
+@@ -694,6 +731,7 @@ static uint32_t SYS_WIFI_ExecuteBlock
+ 
+                             if (SYS_WIFI_SUCCESS == SYS_WIFI_ConnectReq()) 
+                             {
++                                gConnects++;
+                                 wifiSrvcObj->wifiSrvcStatus = SYS_WIFI_STATUS_TCPIP_READY;
+                             }
+                         }
+@@ -742,6 +780,23 @@ static uint32_t SYS_WIFI_ExecuteBlock
+ 
+             case SYS_WIFI_STATUS_TCPIP_READY:
+             {
++                if ((gNextReconnectTime == 0) && !needConnect)
++                {
++                    needConnect = true;
++                    gNextReconnectTime = SYS_TMR_TickCountGetLong() + 1500;
++                }
++#if 1
++                else
++                {
++                    uint64_t ct = SYS_TMR_TickCountGetLong();
++                    if ((gNextReconnectTime != 0) && (gNextReconnectTime < ct))
++                    {
++                        gNextReconnectTime = 0;
++                        SYS_WIFIPROV_TriggerReconnect();
++                    }
++                }
++#endif
++
+                 break;
+             }
+ 
+@@ -802,7 +857,7 @@ static void SYS_WIFI_WIFIPROVCallBack
+                 }
+                 else 
+                 {
+-                    if(memcmp(&g_wifiSrvcConfig,wifiConfig,sizeof(SYS_WIFIPROV_CONFIG)))
++                    //if(memcmp(&g_wifiSrvcConfig,wifiConfig,sizeof(SYS_WIFIPROV_CONFIG)))
+                     {
+                         if ((SYS_WIFIPROV_STA == (SYS_WIFIPROV_MODE)SYS_WIFI_GetMode()) && (SYS_WIFIPROV_STA == wifiConfig->mode))
+                         {

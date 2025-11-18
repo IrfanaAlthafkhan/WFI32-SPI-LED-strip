@@ -1,0 +1,24 @@
+diff --git a/configuration.h b/C:/Users/I20868/Videos/rio0/support/configuration.h
+index 26e6483..49d01b6 100644
+--- a/configuration.h
++++ b/C:/Users/I20868/Videos/rio0/support/configuration.h
+@@ -174,7 +174,7 @@ extern "C" {
+ 
+ 
+ #define SYS_WIFIPROV_NVMADDR        		0x900FF000
+-#define SYS_WIFIPROV_SAVECONFIG        			true
++#define SYS_WIFIPROV_SAVECONFIG        			false
+ 
+ 
+ /*** ICMPv4 Server Configuration ***/
+@@ -444,8 +444,8 @@ extern "C" {
+ 
+ #define SYS_WIFI_MAX_CBS					2
+ #define SYS_WIFI_COUNTRYCODE        	   "GEN"
+-#define SYS_WIFI_STA_SSID        			"DEMO_AP"
+-#define SYS_WIFI_STA_PWD        			"password"
++#define SYS_WIFI_STA_SSID        			"noneap"
++#define SYS_WIFI_STA_PWD        			"deadbeefffA1"
+ 
+ 
+ #define SYS_WIFI_STA_AUTHTYPE				SYS_WIFI_WPA2

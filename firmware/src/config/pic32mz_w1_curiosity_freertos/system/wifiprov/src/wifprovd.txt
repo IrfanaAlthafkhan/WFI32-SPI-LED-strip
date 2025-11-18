@@ -1,0 +1,52 @@
+diff --git a/sys_wifiprov.c b/C:/Users/I20868/Videos/rio0/support/sys_wifiprov.c
+index caec1d1..247f3ba 100644
+--- a/sys_wifiprov.c
++++ b/C:/Users/I20868/Videos/rio0/support/sys_wifiprov.c
+@@ -46,6 +46,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+ #include "definitions.h"
+ #include "configuration.h"
+ #include "system/wifiprov/sys_wifiprov.h"
++#include "system/wifi/sys_wifi.h"
+ // *****************************************************************************
+ // *****************************************************************************
+ // Section: Type Definitions
+@@ -84,6 +85,7 @@ typedef struct
+ static  SYS_WIFIPROV_OBJ      g_wifiProvSrvcObj = {SYS_WIFIPROV_STATUS_NONE, SYS_WIFIPROV_NONE};
+ /* Wi-Fi Provisioning Configuration */
+ static  SYS_WIFIPROV_CONFIG   g_wifiProvSrvcConfig CACHE_ALIGN;
++extern SYS_WIFI_CONFIG       g_wifiSrvcConfig;
+ 
+ /* Wi-Fi Provisioning read Configuration*/
+ static  SYS_WIFIPROV_CONFIG   g_wifiProvSrvcConfigRead;
+@@ -161,7 +163,9 @@ static void inline SYS_WIFIPROV_InitConfig(SYS_WIFIPROV_CONFIG *config)
+         g_wifiProvSrvcConfig.staConfig.authType = SYS_WIFI_STA_AUTHTYPE;
+         memcpy(g_wifiProvSrvcConfig.staConfig.ssid, SYS_WIFI_STA_SSID, sizeof (SYS_WIFI_STA_SSID));
+         memcpy(g_wifiProvSrvcConfig.staConfig.psk, SYS_WIFI_STA_PWD, sizeof (SYS_WIFI_STA_PWD));
+-        SYS_WIFIPROV_SetTaskstatus(SYS_WIFIPROV_STATUS_NVM_READ);
++        SYS_WIFIPROV_SetTaskstatus(SYS_WIFIPROV_STATUS_NONE);//SYS_WIFIPROV_STATUS_NVM_READ);
++
++        memcpy(&g_wifiSrvcConfig, &g_wifiProvSrvcConfig, sizeof(g_wifiProvSrvcConfig));
+     } 
+     else 
+     {
+@@ -232,6 +236,11 @@ static void SYS_WIFIPROV_WriteConfig(void)
+     }
+ }
+ 
++void SYS_WIFIPROV_TriggerReconnect(void)
++{
++    SYS_WIFIPROV_CallBackFun(SYS_WIFIPROV_SETCONFIG, &g_wifiProvSrvcConfig, g_wifiProvSrvcCookie);
++}
++
+ static SYS_WIFIPROV_STATUS SYS_WIFIPROV_ExecuteBlock
+ (
+     SYS_MODULE_OBJ object
+@@ -522,7 +531,7 @@ SYS_MODULE_OBJ SYS_WIFIPROV_Initialize
+     {
+         /* Set Wi-Fi provisioning service cookie */
+         SYS_WIFIPROV_SetCookie(cookie);
+-        SYS_WIFIPROV_InitConfig(config);
++        SYS_WIFIPROV_InitConfig(NULL);//config);
+         /* Wi-Fi Provisioning Service Command line initialization */
+         if (SYS_WIFIPROV_FAILURE == SYS_WIFIPROV_CMDInit()) 
+         {
