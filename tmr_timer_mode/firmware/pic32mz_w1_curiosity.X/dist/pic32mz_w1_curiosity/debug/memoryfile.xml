@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="dist/pic32mz_w1_curiosity/debug/pic32mz_w1_curiosity.X.debug.elf">                 
+    <memory name="program">                 
+      <units>bytes</units>                 
+      <length>1049728</length>                 
+      <used>6088</used>                     
+      <free>1043640</free>                     
+    </memory>                              
+    <memory name="data">              
+      <units>bytes</units>                 
+      <length>262656</length>                 
+      <used>1076</used>                     
+      <free>261580</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 
